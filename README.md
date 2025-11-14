@@ -23,6 +23,7 @@ TOON achieves CSV-like compactness while adding explicit structure that helps LL
 - [Key Features](#key-features)
 - [When Not to Use TOON](#when-not-to-use-toon)
 - [Benchmarks](#benchmarks)
+- [Playgrounds](#playgrounds)
 - [📋 Full Specification](https://github.com/toon-format/spec/blob/main/SPEC.md)
 - [Installation & Quick Start](#installation--quick-start)
 - [CLI](#cli)
@@ -46,7 +47,19 @@ AI is becoming cheaper and more accessible, but larger context windows allow for
 }
 ```
 
-TOON conveys the same information with **fewer tokens**:
+YAML conveys the same infromation with **fewer tokens**:
+
+```yaml
+users:
+  - id: 1
+    name: Alice
+    role: admin
+  - id: 2
+    name: Bob
+    role: user
+```
+
+TOON conveys the same information with **even fewer tokens**:
 
 ```
 users[2]{id,name,role}:
@@ -77,9 +90,6 @@ TOON excels with uniform arrays of objects, but there are cases where other form
 See [benchmarks](#benchmarks) for concrete comparisons across different data structures.
 
 ## Benchmarks
-
-> [!TIP]
-> Try the interactive [Format Tokenization Playground](https://www.curiouslychase.com/playground/format-tokenization-exploration) to compare token usage across CSV, JSON, YAML, and TOON with your own data.
 
 Benchmarks are organized into two tracks to ensure fair comparisons:
 
@@ -650,6 +660,13 @@ repositories[3]{id,name,repo,description,createdAt,updatedAt,pushedAt,stars,watc
 </details>
 
 <!-- /automd -->
+
+## Playgrounds
+
+Experiment with TOON format interactively using these community-built tools:
+
+- **[Format Tokenization Playground](https://www.curiouslychase.com/playground/format-tokenization-exploration)** – Compare token usage across CSV, JSON (pretty/compressed), YAML, and TOON formats. Use preset datasets or paste your own data to see real-time token comparisons.
+- **[TOON Tools](https://toontools.vercel.app/)** – Full toolkit including bidirectional converters (JSON, CSV, XML, YAML ↔ TOON), token counter with side-by-side comparison, TOON validator, batch file converter, and format playground.
 
 ## Installation & Quick Start
 
